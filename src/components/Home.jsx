@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-
+import {getPriceAndNameBreakfast} from '../controller/firestoreController'
 
 
 
@@ -34,6 +34,9 @@ const CompBtnKitchen=()=>(
 
 
 
+
+
+
 const Home = () => {
     return (
         <div className="">
@@ -47,6 +50,9 @@ const Home = () => {
          <main className="">
              <CompBtnOrders/>
              <CompBtnKitchen/>
+             <button   onClick={()=>getPriceAndNameBreakfast().then(res=>console.log(res))}> SEND  </button>
+
+
              </main>            
              </div>
         </div>

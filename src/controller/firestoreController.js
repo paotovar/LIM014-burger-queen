@@ -5,7 +5,7 @@ import Firebase from "../firebaseConfig";
 const db= Firebase.firestore();
 const food=db.collection('food');
 
-export const getPriceAndNameBreakfast=()=>food.where('breakfast','==',true).get().then( (snapshot)=>{
+export const getPriceAndNameBreakfast=()=>food.where('category','==', 'breakfast').get().then( (snapshot)=>{
     const foodBreakfast=[];
     snapshot.forEach(doc=> {
      const breakfastObject={
@@ -25,7 +25,7 @@ export const getPriceAndNameBreakfast=()=>food.where('breakfast','==',true).get(
 }
 );
 
-export const getPriceAndNameMenu=()=>food.where('menu','==',true).get().then((snapshot)=>{
+export const getPriceAndNameMenu=()=>food.where('category','==','menu').get().then((snapshot)=>{
     const foodMenu=[];
     snapshot.forEach((doc) => {
         const menuObject={
@@ -39,7 +39,7 @@ export const getPriceAndNameMenu=()=>food.where('menu','==',true).get().then((sn
 }
 );
 
-export const getPriceAndNameDrinks=()=>food.where('drinks','==',true).get().then(
+export const getPriceAndNameDrinks=()=>food.where('category','==','drinks').get().then(
 (snapshot)=>{
     const foodDrinks=[];
     snapshot.forEach(doc => {
