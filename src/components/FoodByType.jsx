@@ -24,7 +24,7 @@ const BtnSelectFood=({price,name,id},index,addPropertiesToOrder)=>(
 </div>
 );
 
-export const BreackfastView=({breakfastData,addPropertiesToOrder})=>{
+export const BreakfastView=({breakfastData,addPropertiesToOrder})=>{
     const arrView=breakfastData.map((obj,index)=>BtnSelectFood(
         obj,
         index,
